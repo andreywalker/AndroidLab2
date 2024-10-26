@@ -65,30 +65,26 @@ class OfferListFragment : Fragment() {
                 Log.e("offersss fail", t.toString())
             }
         })
-        setupUI()
         val list=FakeService.offerList
-        val yourSortedList: List<Offer> = yourList.sortedBy { it.price }
+        setupUI(list)
+
         adapter.saveData(FakeService.offerList)
     }
 
-    private fun setupUI() {
+    private fun setupUI(list:List<Offer>) {
         with(binding) {
             offerList.adapter = adapter
 
             sortRadioGroup.setOnCheckedChangeListener { _, checkedId ->
                 when (checkedId) {
                     R.id.sort_by_price -> {
-                        /**
-                         * implement sorting by price
-                         * hint: you can take the current list using getCurrentList method of ListAdapter instance
-                         */
+                        val llist: List<Offer> = list.sortedBy { it.price }
+                        adapter.saveData(llist)
                     }
 
                     R.id.sort_by_duration -> {
-                        /**
-                         * implement sorting by duration
-                         * hint: you can take the current list using getCurrentList method of ListAdapter instance
-                         */
+                        val llist: List<Offer> = list.sortedBy { it.flight.duration }
+                        adapter.saveData(llist)
                     }
                 }
             }
