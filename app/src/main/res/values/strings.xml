@@ -5,6 +5,6 @@
     <string name="direct">прямой</string>
     <string name="price_fmt">%1$s ₸</string>
     <string name="sort">Сортировка</string>
-    <string name="sort_by_price">По цене (по возрастанию)</string>
-    <string name="sort_by_duration">По длительности полета (по возрастанию)</string>
+    <string name="sort_by_price">По энергии (по возрастанию)</string>
+    <string name="sort_by_duration">По продолжительности жизни (по возрастанию)</string>
 </resources>
